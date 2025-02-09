@@ -1,0 +1,47 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'io.ratpack:ratpack-gradle:1.9.0'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group = 'co.id.hattaldino'
+version = '1.0'
+
+apply plugin: "io.ratpack.ratpack-java"
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = 'co.id.hattaldino.InventoryManagement'
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    runtimeOnly 'org.slf4j:slf4j-simple:1.7.10'
+
+    implementation 'io.ratpack:ratpack-guice:1.9.0'
+    implementation 'javax.inject:javax.inject:1'
+    implementation 'com.google.inject:guice:7.0.0'
+    implementation 'org.postgresql:postgresql:42.5.0'
+    implementation 'org.jdbi:jdbi3-core:3.34.0'
+    implementation 'org.jdbi:jdbi3-postgres:3.34.0'
+}
+
+apply plugin: "idea"
+
+test {
+    useJUnitPlatform()
+}

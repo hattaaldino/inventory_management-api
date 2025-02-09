@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "bcaf68cb-bea9-41f5-898f-51865b891413",
+		"name": "InventoryManagement_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22191404"
+	},
+	"item": [
+		{
+			"name": "Insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Smart Sensor\",\r\n  \"category\": \"Electronics\",\r\n  \"quantity\": 50,\r\n  \"unitPrice\": 19.99,\r\n  \"supplier\": \"Samsung\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/inventory"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Smart Sensor\",\r\n  \"category\": \"Electronics\",\r\n  \"quantity\": 50,\r\n  \"unitPrice\": 19.99,\r\n  \"supplier\": \"Samsung\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/inventory"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "content-encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 7\n    },\n    \"message\": \"Inventory item added successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/inventory"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/inventory"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "content-encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 7,\n            \"name\": \"Smart Sensor\",\n            \"category\": \"Electronics\",\n            \"quantity\": 50,\n            \"unitPrice\": 19.99,\n            \"supplier\": \"Samsung\",\n            \"updatedAt\": \"2025-02-09 22:37:20.709666\"\n        }\n    ],\n    \"message\": \"All inventory item fetch succesfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Smart Sensor\",\r\n  \"category\": \"Electronics\",\r\n  \"quantity\": 120,\r\n  \"unitPrice\": 19.99,\r\n  \"supplier\": \"Samsung\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/inventory/{{id}}"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Smart Sensor\",\r\n  \"category\": \"Electronics\",\r\n  \"quantity\": 120,\r\n  \"unitPrice\": 19.99,\r\n  \"supplier\": \"Samsung\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/inventory/{id}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "content-encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Inventory item updated successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{url}}/inventory/{id}"
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{url}}/inventory/7"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "content-encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Inventory item deleted successfully\"\n}"
+				}
+			]
+		}
+	]
+}
