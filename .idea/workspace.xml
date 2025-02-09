@@ -71,6 +71,11 @@
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\java-project\InventoryManagement" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.InventoryManagement">
     <configuration name="InventoryManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="co.id.hattaldino.InventoryManagement" />

@@ -100,6 +100,6 @@ Create database from script in `/support/database.sql`
 }
 ```
 
-## Notes
+## Testing
 
-You can simulate the API by importing the postman collection stored in the support directory into postman.
+For testing you can use InventoryManagement.jar by execute `java -jar InventoryManagement.jar` in your server, then you can simulate the API by importing the postman collection stored in the support directory into postman.
